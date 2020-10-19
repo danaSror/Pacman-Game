@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/main.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <Title>PACMAN GAME</Title>
+</head>
+
+<body>
+<!----- header ----->
+    <div class="header" >
+		<a > <img src="images/205.jpg" width="500px" height="100px" /> </a>
+		<!-- <div class="header-right" style="color: rgb(255, 255, 255);">
+            <h3 style="color: azure;">presenters :</h3>
+            <p style="color: azure;">Yarin Hayun, Dana Sror</p> 
+		</div> -->
+	</div>
+
+<!----- menu ----->
+<nav id="menu" style="overflow:auto;">	
+	<ul >
+		<li><a id="welcome"  href="#"  onclick="clickPage('welcome')">Welcome</a> </li>
+		<li><a id="register" href="#" onclick="clickPage('register')">Register</a> </li>
+		<li><a id="login" href="#"  onclick="clickPage('login')">Login</a></li>
+		<li><a id="aboutBtn" onclick="clickPage('about')"  href="#" >About</a></li>
+	</ul>
+</nav>
+
+<!----- main body ----->
+<div id="main" >
+    <!--------------- welcome section ---------------->
+    <section id="welcomeSection" class="activeSection" >
+        <br/>
+        <br/>
+        <br/>
+        <h1 style="font-size: 15mm;text-align: center;color: rgb(255, 255, 255);">Welcome</h1>
+        <img id="logo" src="images/pac.jpg">
+        <div id="welcomeButtons">
+            <button onclick="openPage('login')" class="button button2"><span>Login </span>
+            </button>
+            <button onclick="openPage('register')" class="button button2" ><span>Register </span>
+            </button>
+        </div>
+    </section>
+
+    <!------------ Registration section ------------->
+	<section id="registerSection" class="registrationForm">
+        <br/>
+        <br/>
+        <br/>
+        <div id="Register" class="registrationForm">
+		<form id="registrationForm" role="form" >
+			<div class="container">
+			  <h1>Register</h1>
+			  <p>Please fill this form to create an account.</p>
+			  <hr>
+			  <p>
+						<label>user name *</label><br>
+						<input id="userNameR" type="text" placeholder="Enter user name" name="username"  pattern="^[a-zA-Z]*$"  required="required" autocomplete="off" />
+						</p>
+						<p>
+							<label>password *</label><br>
+							<input id="passwordR" type="password" placeholder="Enter password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required="required" autocomplete="off"/>
+						</p>   
+						<p>
+							<label>first name *</label><br>
+							<input id="firstNameR" type="text" placeholder="Enter first name" name="firstName"  pattern="^[a-zA-Z]*$" required="required" autocomplete="off"/>
+						</p> 
+						<p>
+							<label>last name *</label><br>
+							<input id="lastNameR" type="text" placeholder="Enter last name" name="lastName" pattern="^[a-zA-Z]*$" required="required" autocomplete="off"/>
+						</p> 
+						<p>
+							<label>email *</label><br>
+							<input id="emailR" type="email" placeholder="Enter email" name="email" required="required"  autocomplete="off" />
+						</p>
+						<p>
+							<label>birthday *</label><br>
+							<input id="birthdayR" type="date" placeholder="00/00/0000" id="birthday" name="birthday" required="required" />
+						</p>
+						<p>
+						  <input id="registerSubmitButton"  type="submit" value="Submit" class="formButton formButton2">
+						</p>
+			</div>
+</form>		
+        </div>
+        <br/>
+        <br/>
+    </section>
+
+    <!--------------- Login section ----------------->
+    <section id="loginSection">
+		<br/>
+        <br/>
+		<br/>
+		<div id="Login" class="loginForm">
+            <form id="loginForm" class="loginForm" role="form" method="post" action="">  
+				<div class="container">
+					<h1 style="color: azure;">Login</h1>
+					<p>
+                     	<input id="loginUserName" type="text" placeholder="Enter user name" name="username"  required="required" autocomplete="off"/>                 	                       
+					</p>
+					<p>
+                        <input id="loginPassword" type="password" placeholder="Enter password" name="password"  required="required" autocomplete="off" />
+					</p>           
+                        <input id="login-submit-button" class="formButton formButton2" type="submit" value="Submit">		
+				</div>
+			</form>			
+    </section>
+
+    <!--------------- About section ----------------->
+    <section id="myModal" class="modal" >
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <u><b>Presenters names :</b> </u>
+            <p><b>Yarin Hayun , Dana sror</b></p>
+            <br>
+            <p><u><b>jQury and Template uses :</b></u> 
+                We use Jquery 3.4.0 for the validation of fields.</p>
+            <p><u><b>Difficulties :</b></u> 
+                We had difficult to switch between the different pages but 
+            finally we overcome the problem via transition function we wrote.</p>
+        </div>
+    </section>
+
+	<!------------ game settings section ------------->
+	<section  id="gameSettingsSection">
+		<br/>
+        <br/>
+        <br/>
+        <div id="Settings" >
+		<form id="settingsForm">
+			<div class="container">
+			  <h1 style="color: azure;">Pre game settings</h1>
+			  <hr>
+			  <p>
+				<label for="ballsNum"><u>Enter number of balls:</u></label><br/>
+				<input  id="ballsNum" value=50 type="number" name="ballsNum" min= "50" max="90" required="required" >
+			  </p>
+			  <p><br>
+				<label for="gameTime"><u> Enter game duration:</u></label><br/>
+				<input  id="gameTime" value= 60 type="number" name="gameTime" min= "60" required="required">
+			  </p>   
+			  <p><br>
+				<label for="monstersNum"><u>Enter number of monsters:</u></label><br/>
+				<input  id="monstersNum" value=1 type="number" name="monstersNum" min="1" max="4" required="true">
+			  </p>
+
+			  <p><br>
+				<label ><u>Enter balls color:</u></label><br/>
+				<label for="monstersNum" style=" word-spacing: 25px;">5points  15points  25points</label><br/>
+                <input type="color" id="ball_5_color" name="5color" value="#00CED1" style="width: 7%;" >
+                <input type="color" id="ball_15_color" name="15color" value="#FF69B4"style="width: 7%;">
+                <input type="color" id="ball_25_color" name="25color" value="#00008B" style="width: 7%;">
+			  </p>
+			 <div><br>
+				<label ><u>Enter game buttons:</u></label><br/>
+				<input id="upKeyInp"   type="text"  autocomplete="off" name="up" required="true" placeholder="&#8593;" style="text-align: center;width: 7%; font-size: 3mm;">
+				<input id="downKeyInp" type="text" autocomplete="off" name="down" required="true" placeholder="&#8595;"  style="text-align: center;width: 7%; font-size: 3mm;">
+				<input id="LeftKeyInp"  type="text" autocomplete="off" name="left" required="true" placeholder="&#8592;" style="text-align: center;width: 7%; font-size: 3mm;" >
+				<input id="rightKeyInp"  type="text" autocomplete="off" name="right" required="true" placeholder="&#8594;"  style="text-align: center;width: 7%; font-size: 3mm;">
+			 </div>
+
+			  <br>
+			  <br>
+			  <p>
+			    <input id="startGameButton" name="start" type="submit" value="send" class="formButton formButton2">
+				<button id="randomGameButton" name="random"  class="formButton formButton2">random</button>
+			  </p>
+			</div>
+		</form>		
+        </div>
+		
+    </section>
+
+
+ <!-- ------------------- Game -------------------->
+ <section id="gameSection" style="color:rgb(242, 255, 55);">
+	<audio id="myAudio">
+		<source src="music/GameSound.mp3" type="audio/mpeg">			
+	</audio>
+	<table >
+		<tr>
+		  <!-- left col -->
+		  <td>
+			<table>
+			  <tr>
+				  <td>
+					  <div>
+						  <label >Player name :</label><br>
+						  <input class="inputGame" id="lblPlayerName" type="text" readonly=true />
+					  </div>
+				  </td><br><br>
+				</tr>
+				  <tr>
+					  <td>
+						  <div>
+							  <label >LIFE :</label><br>
+							  <img id="lifeId" src='images/5life.jpg' height="30px" width="120px">
+						  </div>
+				  </tr>
+				   <tr>
+				  <td><br>
+					  <div id="score">
+						  <label for="lblScore">SCORE:</label><br>
+						  <input class="inputGame" id="lblScore" type="text" />
+					  </div>
+				  </td>
+				   </tr>
+				   <tr>
+				   <td>
+					  <div id="time">
+						  <label for="lblTime">TIME:</label><br>
+						  <input class="inputGame" id="lblTime" type="text" />
+					  </div>
+				   </td>
+				   </tr>
+				  <tr>
+					<td>
+					  <div id="buttonDiv">
+						  <button onclick="newGame()" class="button canvasButton">New Game</button><br>
+					  </div>
+					</td>
+				  </tr>
+				  <tr>
+					  <td>
+						<div id="monsterScoreMethod">
+							<br>
+						  <img src='images/monstersScore.jpg' height="200px" width="250px">
+						</div>
+					  </td>
+					</tr>
+				
+			</table>
+		</td>
+		<!-- center col -->
+		<td id="game">
+			<br>
+			<br>
+			  <canvas id="canvas" height="600" width="600" style="padding-top:6%;" ></canvas>
+			  <br>
+			  <br>
+		</td>
+		  <!-- right col -->
+		  <td>
+			  <table>
+				<tr>
+					<td>
+						<div id="music">
+							<img id="playMusic" onclick="playAudio()" src="images/play.png" class="playMusicClass" width = "30px" height= "30px">
+							<img  id="stopMusic" onclick="stopAudio()" src="images/stop.png"class="stopMusicClass" width = "30px" height="30px" >
+							<br>
+							<br>
+						</div>
+					</td><br>
+				</tr>
+					<tr>
+					  <td>
+						<div id="upKey">
+							<labla for="lblUpKey" ><b>Up key:</b></labla>	<br>
+							<input class="inputGame" id = "lblUpKey" type="text" value="">
+						</div> 
+					  </td>
+					</tr>
+					 <tr>
+					<td>
+						<div id="downKey">
+							<labla for="lblDownKey"><b>Down key:</b></labla>	<br>
+							<input class="inputGame" id = "lblDownKey" type="text" value="">
+						</div>
+					</td>
+					 </tr>
+					 <tr>
+					 <td>
+						<div id="rightKey">
+							<labla for="lblRightKey"><b>Right key:</b></labla>	<br>
+							<input class="inputGame" id = "lblRightKey" type="text" value="">
+						</div>
+					 </td>
+					 </tr>
+					<tr>
+					  <td>
+						<div id="LeftKey">
+							<labla for="lblLeftKey"><b>Left key:</b></labla>	<br>
+							<input class="inputGame" id = "lblLeftKey" type="text" value="" >
+						</div>
+					  </td>
+					</tr>
+					 <tr>
+					<td>
+						<div id="Monster">
+							<labla for="lblMonsters"><b>Monsters amount:</b></labla><br>	
+							<input class="inputGame" id = "lblMonsters" type="text" value="">
+						</div> 
+					</td>
+					 </tr>
+					 <tr>
+					 <td>
+						<div id="5ballColor">
+							<labla for="lbl5ballColor"><b>Color of 5 points :</b></labla>	
+							<input class="inputGame" id = "lbl5ballColor"  value="">
+						</div>
+					</td>
+					 </tr>
+					 <tr>
+					 <td>
+						<div id="15ballColor">
+							<labla for="lbl15ballColor"><b>Color of 15 points:</b></labla>	
+							<input class="inputGame" id = "lbl15ballColor"  value="">
+						</div>
+					 </td>
+					 </tr>
+					 <tr>
+					 <td>
+						 <div id="25ballColor">
+						<labla for="lbl25ballColor"><b>Color of 25 points:</b></labla>	
+						<input class="inputGame" id = "lbl25ballColor"  value="">
+						</div>
+					 </td><br>
+					 </tr>
+					 
+			  </table>
+	  </td>
+		</tr>
+		
+	  </table>
+		</section>
+
+
+
+<!----- footer ----->
+<footer>
+    <div >© 2020 Dana Sror & Yarin Hayun ©&nbsp;<br><a href="mailto:danayevd@post.bgu.ac.il?subject=Pacman">danayevd@post.bgu.ac.il  </a>&nbsp;</div>
+<div><a href="mailto:yarinbo@post.bgu.ac.il?subject=Pacman">yarinbo@post.bgu.ac.il</a>&nbsp;</div>
+</footer>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/register.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/about.js"></script>
+	<script type="text/javascript" src="js/gameSettings.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
+</body>
+</html>

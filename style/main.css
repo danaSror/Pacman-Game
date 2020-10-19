@@ -1,0 +1,395 @@
+html {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  resize: both;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+body {
+    background-color: rgb(0, 0, 0);
+    background-size: 100% 100%;
+    min-height:100%;
+    padding:0; 
+    margin:0;
+    position:relative;
+    color: rgb(255, 255, 255);
+}
+
+
+body::after{ content:''; display:block; height:100px; }
+
+
+/*--------------------------start footer------------------------ */
+footer {
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+  text-align: center;
+  color: white;
+  border-style:dashed;
+  width: 100%;
+  /* height:40px;  */
+  bottom: 0;
+ 
+  margin: auto;
+  position: absolute;
+}
+article{
+  width:100%; 
+  margin:0 auto;
+}
+
+section {
+    display: none;
+    /* text-align: center; */
+}
+
+.activeSection {
+    display: block;
+    text-align: center;
+}
+
+.form{
+  margin: 0 auto;
+}
+
+#logo {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    margin: 4px;
+    cursor: pointer;
+}
+
+#logo:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    text-align: center;
+}
+
+ .registrationForm{
+     color: rgb(255, 255, 255);
+}
+.registrationForm{
+  color: rgb(255, 255, 255);
+}
+input{
+  color: #000;
+  }
+
+
+/*--------------------------start button------------------------ */
+.button {
+    background-color: #ff626d; 
+    border: none;
+    color: white;
+    padding: 25px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 15px;
+    position: relative;
+    border: 3px solid #ffffff;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(253, 250, 250, 0.24),0 17px 50px 0 rgba(255, 255, 255, 0.19);
+  }
+/*--------------------------end button------------------------ */
+
+.formButton{
+  background-color: #ff626d; 
+  border: none;
+  color: white;
+  padding: 15px 42px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 15px;
+  position: relative;
+  border: 3px solid #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+.formButton2:hover {
+  box-shadow: 0 12px 16px 0 rgba(253, 250, 250, 0.24),0 17px 50px 0 rgba(255, 255, 255, 0.19);
+}
+.formButton3:hover {
+  box-shadow: 0 12px 16px 0 rgba(253, 250, 250, 0.24),0 17px 50px 0 rgba(255, 255, 255, 0.19);
+  font-size: 60px;
+}
+
+.canvasButton{
+  background-color: #ff626d; 
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 15px;
+  position: relative;
+  border: 3px solid #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+
+ /*--------------------------start header------------------------ */
+  
+  .header {
+    overflow: hidden;
+    background-color: #000000;
+    padding: 5px 10px;
+    top:0;
+  }
+  
+  .header-right {
+    float: right;
+      font-size: 3mm;
+
+  }
+  /*--------------------------end header------------------------ */
+
+  @media  (min-width: 768px) {
+  /*--------------------------start menu------------------------ */
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding:  0;
+    overflow: hidden;
+    background-color: #ff626d;
+    position: absolute;
+    /*top: 100px;*/
+    top: initial;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(255, 254, 254, 0.548), 0 6px 20px 0 rgba(255, 255, 255, 0.685);
+    /* box-shadow: 0px 10px 16px #fafafa; */
+    border: 2px solid;
+    border-color: azure;
+  }
+  
+  li{
+        display: inline; 
+      }
+  
+  li a {
+    float: left;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    padding: 7px 15px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.activeate) {
+    background-color: hsl(0, 0%, 0%);
+    color: rgb(255, 255, 255);
+  
+  }
+}
+  
+  .activeate{
+    background-color:#222489;
+    color: rgb(255, 255, 255);
+  }
+  #welcome{
+    float: left;
+    background-color: rgb(242, 255, 55);
+    color: rgb(0, 0, 0);
+  }
+  /*--------------------------end menu------------------------ */
+
+
+ 
+/* ------------------------------------------registrition */
+/* Add padding to containers */
+.container {
+  padding: 5px 15px;
+  background-color: rgb(0, 0, 0);
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 30%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#emailR,#birthdayR {
+  width: 30%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  color: #000;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+  .leftSettings{
+   padding-top: 5%;
+    float:left; 
+    width: 25%;
+    height: 25%;
+    color:azure;
+}
+
+/* *************canvas*************** */
+@media screen and (min-height: 768px) and (min-width: 1366px){
+  #canvas{
+      position: absolute; 
+      display: block;
+      top: 28%;  
+      height: 55%;
+      width: 32%;
+      margin-left: 35%;
+      margin-right: 25%;
+  }
+
+/* 
+  .leftSettings{
+      top: 28%;    
+      margin: auto;
+      position: absolute;
+      color: azure;
+  } */
+  
+}
+
+#lbl5ballColor{
+  width: 10%;
+  /* background-color: #00CED1; */
+  border: 2px solid #ffffff;
+/* border: none; */
+  color: white;
+  padding: 5px 5px;
+  /* text-align: center; */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+#lbl15ballColor{
+  width: 10%;
+  /* background-color: #FF69B4; */
+  border: 2px solid #ffffff;
+  /* border: none; */
+  color: white;
+  padding: 5px 5px;
+  /* text-align: center; */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+#lbl25ballColor{
+  width: 10%;
+  /* background-color: #00008B; */
+  border: 2px solid #ffffff;
+  /* border: none; */
+  color: white;
+  padding: 5px 5px;
+  /* text-align: center; */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.inputGame{
+  text-align: center;
+  padding: 5px 15px;
+  margin: 4px 2px;
+}
+#Settings{
+  color: rgb(255, 255, 255);
+}
+/* ******************modal doalog***************** */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  color: #000;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* *******************end modal dialoge******************* */
+
+table {
+  /* border: 2px solid rgb(0, 0, 0); */
+  /* border-collapse: collapse; */
+  border: none;
+  width: 100%;
+  
+}
+th{
+  border: none;
+
+}
+td{
+  /* border: 2px solid rgb(255, 255, 255);
+  border-collapse: collapse; */
+  /* height: 70%; */
+  border: none;
+}
