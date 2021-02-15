@@ -10,11 +10,3 @@
 
 <img src="https://res.cloudinary.com/dfgjujaok/image/upload/v1613383875/Screenshot_4_iuulsh.jpg"  align="center" />
 
----
-
-## ⚖️ License
-
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
-
-- **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2020 © <a href="https://github.com/danaSror" target="_blank">danaSror</a>.
