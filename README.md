@@ -1,4 +1,4 @@
-# Pacman-Game
+# [Pacman-Game](https://danasror.github.io/Pacman-Game/)
 <img src="https://res.cloudinary.com/dfgjujaok/image/upload/v1613383881/Screenshot_2_nrqxuh.jpg"  width=40% />
 
 ## ⚠️ Prerequisites
